@@ -4,6 +4,7 @@ import (
     "fmt"
     "net/http"
     "time"
+    "os"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
@@ -18,6 +19,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
     http.HandleFunc("/", handler)
-    fmt.Printf("listening on port 8000\n")
-    http.ListenAndServe(":8000", nil)
+    port := os.Getenv("PORT")
+    fmt.Println("listening on port " + port)
+    http.ListenAndServe(":"+port, nil)
 }
