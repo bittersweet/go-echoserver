@@ -9,7 +9,7 @@ import (
 
 func handler(w http.ResponseWriter, r *http.Request) {
     if r.URL.Path[1:] != "favicon.ico" {
-      metric.Track("view")
+      go metric.Track("view")
     }
     fmt.Printf("[%s] ", r.RemoteAddr)
     fmt.Printf("%s ", r.Method)
