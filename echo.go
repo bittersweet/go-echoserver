@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go-echoserver/src/metric"
+	"github.com/bittersweet/go-metric"
 	"net/http"
 	"os"
 )
